@@ -1,0 +1,35 @@
+# Linear Congruential Generator
+# Xi = (AXi-1 +B)%M
+
+A = 5
+B = 2
+M = 123  # M, the Modulus, must be a large number, over 100
+
+Input = input('What is the starting number ')
+x = input('how many iterations do you want it to run? ')
+
+def InpCalc(initialnum):
+    out = (A*initialnum+B)%M
+    return out
+
+INPUT = int(Input)
+X = InpCalc(INPUT)
+print(X)
+x = int(x)
+
+
+count = 0
+for i in range(x):
+    count+=1
+    out2 = (A*X+B)%M
+    # print(x)
+    print(out2)
+    # My addition to help improve the randomness of the code:
+    if count%19 == 0:
+        # print('yes')
+        out2 = X+20
+    X = out2
+    
+
+    
+
