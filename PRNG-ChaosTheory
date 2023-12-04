@@ -1,0 +1,35 @@
+// This is my attempt at replicating my psueodrandom number generator I created in python with the java programming language
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        // creates an object of Scanner
+    Scanner input = new Scanner(System.in);
+
+    System.out.print("How many random numbers do you want? ");
+
+    // takes input from the keyboard, 
+    // usually .nextLine() is used to print out the next line of text, 
+    // but can be used to use the next line of text as input to the program!!!
+    Byte entry = input.nextByte();
+    // prints the name
+    System.out.println("You want " + entry + " random numbers");
+
+    System.out.print("Write a decimal between 0 and 1 indicating the initial population percentage (maximum of 1):\n ");
+     Float X = input.nextFloat();
+    System.out.println("You want an initial population of " + X );
+
+
+    float R = 3.7f;
+
+    float x = R*X*(1-X);
+    for (byte i = 0; i < entry; i++) {
+        x = R*x*(1-x);
+        System.out.println(x);
+
+    // closes the scanner
+    input.close();
+        }
+    }
+}
