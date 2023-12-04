@@ -1,0 +1,18 @@
+# pseudorandom  Number Generator using Chaos Theory
+
+# Logistic Growth equation
+# Xi+1 = RXi(1-Xi)
+
+entry = int(input('How many random numbers do you want? '))
+X = float(input('Write a decimal between 0 and 1 indicating the initial population percentage (maximum of 1) ')) # Xi is the percentage of rabbits, for instance, with a maximum of 1 or 100%
+R = 3.7
+
+def PRNG():
+    x = R*X*(1-X)
+    for num in range(entry):
+        x = R*x*(1-x)
+        print(x)
+    return x 
+
+prng = PRNG()
+print('Your final number is: ', prng)
